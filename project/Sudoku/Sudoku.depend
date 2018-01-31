@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1517320252 source:e:\project\project\sudoku\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	"../Headers/Headers.h"
+	"../Branches/Cursor.c"
+	"../Branches/Screen.c"
+	"../Branches/Solver.c"
+	"../Branches/Loading.c"
+
+1517321348 e:\project\project\headers\headers.h
+
+1515992588 e:\project\project\branches\cursor.c
+
+1517320556 e:\project\project\branches\screen.c
+
+1517321446 e:\project\project\branches\solver.c
+
+1517320322 e:\project\project\branches\loading.c
+
