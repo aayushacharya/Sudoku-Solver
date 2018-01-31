@@ -19,3 +19,24 @@
 
 1517320322 e:\project\project\branches\loading.c
 
+1517395174 source:e:\project\sudoku\sudoku\main.c
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	"../Headers/Headers.h"
+	"../Branches/Cursor.c"
+	"../Branches/Screen.c"
+	"../Branches/Solver.c"
+	"../Branches/Loading.c"
+
+1517394199 e:\project\sudoku\headers\headers.h
+
+1517396776 e:\project\sudoku\branches\cursor.c
+
+1517396702 e:\project\sudoku\branches\screen.c
+
+1517396813 e:\project\sudoku\branches\solver.c
+
+1517396788 e:\project\sudoku\branches\loading.c
+

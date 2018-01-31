@@ -1,5 +1,5 @@
 
-void setTab(int a)
+void setTab(int a)             //sets number of tabs
 {
     int i;
     for (i=0;i<a;i++)
@@ -8,7 +8,7 @@ void setTab(int a)
     }
 }
 
-void setScreen()
+void setScreen()                //displays sudoku grid
 {
 
     setTab(4);
@@ -32,7 +32,7 @@ void setScreen()
 
 }
 
-void getInput(int a[9][9])
+void getInput(int a[9][9])                      //gets sudoku input
 {
     int i,j,p,q;
     q=3;
@@ -57,7 +57,7 @@ void getInput(int a[9][9])
 }
 
 
-void displaySolution(int a[9][9])
+void displaySolution(int a[9][9])               //displays solution
 {
     showLoading("SOLVING",4);
     system("cls");
@@ -79,6 +79,30 @@ void displaySolution(int a[9][9])
         if (i==2 || i==5)
             q++;
 
+    }
+
+}
+
+
+void frontScreen()                      //displays welcome screen
+{
+    setTab(3);
+    printf("WELCOME TO SUDOKU SOlVER\n");
+    setTab(2);
+    printf("        -----------------------------\n\n");
+    printf("How to solve:\n");
+    printf("1. Sudoku consists of a 9X9 grid.\n2. You have to fill the numbers from 1 to 9 so that:\n   a)No row should contain the same number\n   b)No column should contain the same number\n   c)No 3X3 box should contain the same numbers.\n\n");
+    setTab(1);
+    printf("NOTE: For empty cells put 0 then enter\n\n");
+    printf("To continue press y to end press n ");
+    char c=getch();
+    if (c=='n')
+    {
+        exit(1);
+    }
+    else if(c=='y')
+    {
+        showLoading("Loading,please wait",2);
     }
 
 }

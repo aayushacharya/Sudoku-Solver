@@ -1,4 +1,4 @@
-void showLoading(char s[],int n)
+void showLoading(char s[],int n)        //New feature
 {
     system("cls");
     setCursor(25,8);

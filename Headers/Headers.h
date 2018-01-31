@@ -1,5 +1,6 @@
 void gotoxy(int ,int );
 void setCursor(int ,int );
+void frontScreen();
 void setScreen();
 void setTab(int );
 void getInput(int a[9][9]);

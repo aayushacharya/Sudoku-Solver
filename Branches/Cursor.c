@@ -1,5 +1,5 @@
 
-void gotoxy(int x, int y)
+void gotoxy(int x, int y)       //gotoxy not available in Codeblocks so defining ourselves
 {
     coord.X=x;
     coord.Y=y;
@@ -8,7 +8,7 @@ void gotoxy(int x, int y)
 
 
 
-void setCursor(int x,int y)
+void setCursor(int x,int y)     //have a more descriptive name for setting cursor
 {
     gotoxy(x,y);
 }
