@@ -2,13 +2,14 @@
     {
         system ("cls");
         int sudoku[9][9];
+        int color[9][9];
         setScreen();
-        getInput(sudoku);
+        getInput(sudoku,color);
         system("cls");
         if (solveSudoku(sudoku)==true)
         {
             setScreen();
-            displaySolution(sudoku);
+            displaySolution(sudoku,color);
         }
         else
         {
@@ -20,20 +21,21 @@
     {
     int row=0;
     int col=0;
+    int num;
 
     if (CheckEmptyCell(sudoku, &row, &col))          //if no cell is left to be filled then sudoku is solved!!
         return true;
-    for (int num = 1; num <= 9; num++)                //else start filling with numbers from 1 to 9
+    for (num = 1; num <= 9; num++)                //else start filling with numbers from 1 to 9
     {
         if (CheckConflict(sudoku, row, col, num))     //if there is no conflict then fill that cell with the number
         {
             sudoku[row][col] = num;
-            if (solveSudoku(sudoku))                  //using recursion check if sudoku is solved
+            if (solveSudoku(sudoku))                  //using recursion try to fill the rest of the grid
                 return true;
-            sudoku[row][col] = EMPTY;                 //if not solved, put the value of that cell 0 and try again for another number
+            sudoku[row][col] = EMPTY;                 //if not, put the value of that cell 0 and try again for another number
         }
     }
-    return false;
+    return false;                                    // will return false if there is conflict and hence helps in backtracking
     }
 
 
@@ -41,9 +43,12 @@
 bool CheckEmptyCell(int sudoku[9][9],int* row,int* col)//this simply checks if any cell is empty
 {
 
-    for (*row = 0; *row < 9; (*row)++){
-        for (*col = 0; *col < 9; (*col)++){
-            if (sudoku[*row][*col] == EMPTY){
+    for (*row = 0; *row < 9; (*row)++)
+    {
+        for (*col = 0; *col < 9; (*col)++)
+        {
+            if (sudoku[*row][*col] == EMPTY)
+            {
                 return false;
             }
         }
@@ -53,7 +58,8 @@ bool CheckEmptyCell(int sudoku[9][9],int* row,int* col)//this simply checks if a
 
 bool CheckRow(int sudoku[9][9], int row, int num)      //checks row if the number is repeated or not
 {
-    for (int col = 0; col < 9; col++)
+    int col;
+    for (col = 0; col < 9; col++)
     {
         if (sudoku[row][col] == num)
         {
@@ -65,7 +71,8 @@ bool CheckRow(int sudoku[9][9], int row, int num)      //checks row if the numbe
 
 bool CheckCol(int sudoku[9][9], int col, int num)      //checks column
 {
-    for (int row = 0; row < 9; row++)
+    int row;
+    for (row = 0; row < 9; row++)
     {
         if (sudoku[row][col] == num)
         {
@@ -75,11 +82,12 @@ bool CheckCol(int sudoku[9][9], int col, int num)      //checks column
     return true;
 }
 
-bool CheckBox(int sudoku[9][9], int boxRow, int boxCol, int num)  //checks box
+bool CheckBox(int sudoku[9][9],int boxRow,int boxCol, int num)  //checks box
 {
-    for (int row = 0; row < 3; row++)
+    int row,col;
+    for (row = 0; row < 3; row++)
     {
-        for (int col = 0; col < 3; col++)
+        for (col = 0; col < 3; col++)
         {
             if (sudoku[row+boxRow][col+boxCol] == num)
             {
@@ -95,7 +103,9 @@ bool CheckConflict(int sudoku[9][9], int row, int col, int num) //checks conflic
 {
     return CheckRow(sudoku, row, num) &&
            CheckCol(sudoku, col, num) &&
-           CheckBox(sudoku, row - row%3 , col - col%3, num);
+           CheckBox(sudoku,row-row%3,col-col%3, num);
 }
+           /* This part is easy to understand. The only thing would be the parameters in CheckBox */
+
 
 

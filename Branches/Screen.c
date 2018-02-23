@@ -32,7 +32,7 @@ void setScreen()                //displays sudoku grid
 
 }
 
-void getInput(int a[9][9])                      //gets sudoku input
+void getInput(int a[9][9], int b[9][9])                      //gets sudoku input
 {
     int i,j,p,q;
     q=3;
@@ -45,7 +45,9 @@ void getInput(int a[9][9])                      //gets sudoku input
             if (j==2 || j==5 )
                 p+=2;
             scanf("%d",&a[i][j]);
+            checkForColor(a[i][j],i,j,b);
             p++;
+
         }
         q++;
         if (i==2 || i==5)
@@ -56,10 +58,9 @@ void getInput(int a[9][9])                      //gets sudoku input
 
 }
 
-
-void displaySolution(int a[9][9])               //displays solution
+void displaySolution(int a[9][9],int b[9][9])               //displays solution
 {
-    showLoading("SOLVING",4);
+    showLoading("Solving",3);
     system("cls");
     setScreen();
     int i,j,p,q;
@@ -72,7 +73,17 @@ void displaySolution(int a[9][9])               //displays solution
             setCursor(p+j*2,q+i);
             if (j==2 || j==5 )
                 p+=2;
+            if (b[i][j]==a[i][j])
+            {
+                setColor(11);                                //coloured output for input numbers
+                printf("%d",a[i][j]);
+            }
+            else
+            {
+            setColor(7);                                   //white ouput for solved colors
             printf("%d",a[i][j]);
+            }
+            setColor(7);                                   //changing it back to white
             p++;
         }
         q++;
@@ -105,4 +116,19 @@ void frontScreen()                      //displays welcome screen
         showLoading("Loading,please wait",2);
     }
 
+}
+
+void checkForColor(int num,int row, int col,int b[9][9])
+{
+    
+    if(num != EMPTY)
+    {
+        b[row][col]=num;    
+    }
+
+}
+
+void setColor(int value)
+{
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),  value);
 }

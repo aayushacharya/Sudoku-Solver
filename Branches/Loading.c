@@ -7,7 +7,7 @@ void showLoading(char s[],int n)        //New feature
     while(i<3)
     {
         sleep(n);
-        printf(".");
+        printf(".\a");
         i++;
     }
 }

@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
 #include <windows.h>
-#include <stdlib.h>
 #include "../Headers/Headers.h"
 #include "../Branches/Cursor.c"
 #include "../Branches/Screen.c"
@@ -12,6 +10,7 @@ int main()
     system("cls");
     frontScreen();
     solve_Sudoku();
+    return 0;
 }
 
 
