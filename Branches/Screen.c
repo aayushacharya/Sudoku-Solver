@@ -75,12 +75,12 @@ void displaySolution(int a[9][9],int b[9][9])               //displays solution
                 p+=2;
             if (b[i][j]==a[i][j])
             {
-                setColor(11);                                //coloured output for input numbers
+                setColor(12);                                //coloured output for input numbers
                 printf("%d",a[i][j]);
             }
             else
             {
-            setColor(7);                                   //white ouput for solved colors
+            setColor(15);                                   //white ouput for solved colors
             printf("%d",a[i][j]);
             }
             setColor(7);                                   //changing it back to white
