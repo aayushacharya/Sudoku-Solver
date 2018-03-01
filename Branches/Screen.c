@@ -91,6 +91,7 @@ void displaySolution(int a[9][9],int b[9][9])               //displays solution
             q++;
 
     }
+    printf("\n");
 
 }
 

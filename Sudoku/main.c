@@ -10,6 +10,7 @@ int main()
     system("cls");
     frontScreen();
     solve_Sudoku();
+    system("pause");
     return 0;
 }
 
