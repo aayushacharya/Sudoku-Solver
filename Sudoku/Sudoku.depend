@@ -19,7 +19,7 @@
 
 1517320322 e:\project\project\branches\loading.c
 
-1519651087 source:e:\project\sudoku\sudoku\main.c
+1519901560 source:e:\project\sudoku\sudoku\main.c
 	<stdio.h>
 	<windows.h>
 	"../Headers/Headers.h"
@@ -32,7 +32,7 @@
 
 1517396776 e:\project\sudoku\branches\cursor.c
 
-1519380589 e:\project\sudoku\branches\screen.c
+1519901535 e:\project\sudoku\branches\screen.c
 
 1519558095 e:\project\sudoku\branches\solver.c
 
